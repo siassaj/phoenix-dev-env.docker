@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -f /sys/hypervisor/uuid ] && [ `head -c 3 /sys/hypervisor/uuid` == ec2 ]; then
+    # ec2 machine
+    login_cmd=`aws ecr get-login --no-include-email --region ap-southeast-2`
+else
+    login_cmd=`aws ecr get-login --no-include-email --region ap-southeast-2 --profile smashjadi`
+fi
+
+$login_cmd
+
+docker build -t assetsmash-develop .
+docker tag assetsmash-develop:latest 618820278434.dkr.ecr.ap-southeast-2.amazonaws.com/assetsmash-develop:latest
+docker push 618820278434.dkr.ecr.ap-southeast-2.amazonaws.com/assetsmash-develop:latest
