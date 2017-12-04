@@ -5,7 +5,9 @@ RUN git clone https://github.com/ferd/erlang-history && \
     cd erlang-history && \
     make install && \
     cd .. && \
-    rm -rf erlang-history
+    rm -rf erlang-history && \
+    apt-get install -y inotify-tools && \
+    apt-get -y purge &&\
 
 WORKDIR /app
 
