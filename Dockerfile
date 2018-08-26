@@ -1,5 +1,5 @@
 ################################## Use Cached ##################################
-FROM siassaj/phoenix-env:latest
+FROM siassaj/phoenix-env:1.7.2
 
 RUN git clone https://github.com/ferd/erlang-history && \
     cd erlang-history && \

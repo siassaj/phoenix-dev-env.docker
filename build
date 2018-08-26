@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t siassaj/phoenix-dev-env:latest .
-docker push siassaj/phoenix-dev-env:latest
+docker build -t siassaj/phoenix-dev-env:1.7.2 .
+docker push siassaj/phoenix-dev-env:1.7.2
